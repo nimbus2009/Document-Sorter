@@ -1,9 +1,21 @@
 import shutil
 import os
 
-from_dir="C:/Users/HP/Downloads"
-to_dir="C:/Users/HP/Documents"
-copy_dir="C:/Users/HP/Documents/Sorted"
+def_from_dir="C:/Users/HP/Downloads"
+def_to_dir="C:/Users/HP/Documents"
+def_copy_dir="C:/Users/HP/Documents/Sorted"
+
+from_dir=str(input("Enter the directory of the files to be sorted-"))
+if(from_dir==''):
+    from_dir=def_from_dir
+
+to_dir=str(input("Enter the destination of the files to be sorted-"))
+if(to_dir==''):
+    to_dir=def_to_dir
+
+copy_dir=str(input("Enter the destination of the files to be sorted again-"))
+if(copy_dir==''):
+    copy_dir=def_copy_dir
 
 list_of_files=os.listdir(from_dir)
 
