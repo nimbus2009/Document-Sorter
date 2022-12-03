@@ -75,7 +75,18 @@ class FileMovementHandler(FileSystemEventHandler):
                         time.sleep(1)
 
                     break
-
+    def on_deleted(self, event):
+        name,ext=os.path.splitext(event.src_path)
+        print(event)
+        print(name,'.',ext," has been deleted from directory.")
+    def on_moved(self, event):
+        name,ext=os.path.splitext(event.src_path)
+        print(event)
+        print(name,'.',ext," has been moved from directory.")
+    def on_modified(self, event):
+        name,ext=os.path.splitext(event.src_path)
+        print(event)
+        print(name,'.',ext," has been modified.")
 
 #Initialise the event handler class
 event_handler=FileMovementHandler()
